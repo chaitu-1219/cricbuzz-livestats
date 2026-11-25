@@ -1,0 +1,14 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.db
+*.sqlite3
+out.txt
+err.txt
+check_db.py
+setup_db.py
+run.bat
+.streamlit/secrets.toml

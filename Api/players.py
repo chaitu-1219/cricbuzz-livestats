@@ -313,6 +313,4 @@ class PlayersAPI:
         return players
 
 
-# Singleton Instance
-
-players_api = PlayersAPI()
+# Note: instantiate lazily, not at import time

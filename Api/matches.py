@@ -275,4 +275,4 @@ class MatchesAPI:
         return data.get("status", "")
 
 
-matches_api = MatchesAPI()
+# Note: instantiate lazily, not at import time

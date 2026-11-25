@@ -173,7 +173,26 @@ class APIClient:
 
 
 # -------------------------------------------------------
-# Singleton Client
+# Singleton Client (lazy — not instantiated at import time)
 # -------------------------------------------------------
 
-client = APIClient()
+_client = None
+
+
+def get_client() -> APIClient:
+    global _client
+    if _client is None:
+        _client = APIClient()
+    return _client
+
+
+# Backward-compatible alias used by matches.py
+class _LazyClient:
+    def get(self, *args, **kwargs):
+        return get_client().get(*args, **kwargs)
+
+    def close(self):
+        get_client().close()
+
+
+client = _LazyClient()

@@ -230,5 +230,4 @@ class RankingsAPI:
         }
 
 
-# Singleton Instance
-rankings_api = RankingsAPI()
+# Note: instantiate lazily, not at import time
